@@ -1,0 +1,7 @@
+# -*- coding: utf-8 -*-
+te = input('请输入文本:')
+sec = ''
+for char in te:
+    code = ord(char)
+    sec = chr(ord(char) + 2)
+print(sec)
