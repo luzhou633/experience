@@ -1,0 +1,41 @@
+""" 
+用递归求一个数的阶乘
+def function(n):
+    if n > 1:
+        return n * function(n - 1)
+    elif n == 1:
+        return 1
+    else:
+        return "输入错误，请输入大于等于1的整数"
+print(function(5))  
+"""
+
+
+"""
+写一个健身小程序来练习函数的使用
+"""
+print(f"【仰卧起坐】【7天】挑战赛（请输入每天的数量）")
+sign_toatl = 200
+sign_avg = sign_toatl / 7
+for day in range(1, 8):
+    eve_count = int(input(f"第{day}天："))
+    # 由于eve_count在循环外无法访问，这里将函数定义放在循环内
+    def calculate():
+        total = 0
+        for i in range(1, day + 1):
+            total += eve_count
+        return total
+    def calc_avg():
+        avg = calculate() / 7
+        return avg
+total_count = calculate()
+avg_count = calc_avg()
+print("【仰卧起坐】【7天】健身总结")
+print(f'总数:{total_count}个，平均值:{avg_count}个')
+def check():
+    if calculate() >= sign_toatl and calc_avg() >= sign_avg:
+        return "恭喜你，挑战成功！"
+    else:
+        return "很遗憾，挑战失败！"
+check()
+print(check())
